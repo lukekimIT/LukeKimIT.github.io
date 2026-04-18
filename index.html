@@ -3,25 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luke Kim | IT Security Professional</title>
+  <title>Luke Kim | IT Professional</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0a0e17;
-      --surface: #111827;
-      --border: #1e2d40;
-      --accent: #00c2ff;
-      --accent2: #00ff9d;
-      --text: #e2e8f0;
-      --muted: #64748b;
-      --heading-font: 'DM Serif Display', serif;
-      --mono: 'DM Mono', monospace;
-      --body: 'DM Sans', sans-serif;
+      --bg: #080d18;
+      --surface: #0d1525;
+      --surface2: #111d30;
+      --border: #1c2e45;
+      --copper: #c8813a;
+      --copper-light: #e09a52;
+      --copper-dim: rgba(200,129,58,0.12);
+      --text: #d8e0ec;
+      --muted: #5a7498;
+      --heading: 'Cormorant Garamond', serif;
+      --mono: 'IBM Plex Mono', monospace;
+      --body: 'IBM Plex Sans', sans-serif;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -33,20 +34,18 @@
       overflow-x: hidden;
     }
 
-    /* Grid background */
     body::before {
       content: '';
       position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(0,194,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,194,255,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(200,129,58,0.05) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
     }
 
-    /* Nav */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -54,48 +53,46 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 48px;
-      background: rgba(10,14,23,0.85);
-      backdrop-filter: blur(12px);
+      padding: 22px 56px;
+      background: rgba(8,13,24,0.92);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-logo {
       font-family: var(--mono);
-      font-size: 13px;
-      color: var(--accent);
-      letter-spacing: 0.15em;
+      font-size: 12px;
+      color: var(--copper);
+      letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 36px;
       list-style: none;
     }
 
     .nav-links a {
       font-family: var(--mono);
-      font-size: 12px;
+      font-size: 11px;
       color: var(--muted);
       text-decoration: none;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover { color: var(--copper-light); }
 
-    /* Main content wrapper */
     main {
       position: relative;
       z-index: 1;
-      max-width: 1000px;
+      max-width: 1020px;
       margin: 0 auto;
-      padding: 0 32px;
+      padding: 0 40px;
     }
 
-    /* Hero */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -104,39 +101,62 @@
       padding-top: 80px;
     }
 
-    .hero-tag {
+    .hero-eyebrow {
       font-family: var(--mono);
-      font-size: 12px;
-      color: var(--accent);
-      letter-spacing: 0.2em;
+      font-size: 11px;
+      color: var(--copper);
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.2s;
+      animation: fadeUp 0.7s ease forwards 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--copper);
     }
 
     .hero h1 {
-      font-family: var(--heading-font);
-      font-size: clamp(52px, 8vw, 96px);
-      line-height: 1;
+      font-family: var(--heading);
+      font-size: clamp(64px, 10vw, 112px);
+      font-weight: 300;
+      line-height: 0.95;
       color: #fff;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
       opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.4s;
+      animation: fadeUp 0.7s ease forwards 0.4s;
+      letter-spacing: -0.02em;
     }
 
-    .hero h1 span {
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(0,194,255,0.4);
+    .hero h1 em {
+      font-style: italic;
+      color: var(--copper-light);
+    }
+
+    .hero-divider {
+      width: 64px;
+      height: 1px;
+      background: linear-gradient(to right, var(--copper), transparent);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.55s;
     }
 
     .hero-sub {
-      font-size: 18px;
+      font-size: 17px;
       color: var(--muted);
-      max-width: 560px;
-      margin-bottom: 48px;
+      max-width: 540px;
+      margin-bottom: 44px;
+      line-height: 1.8;
       opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.6s;
+      animation: fadeUp 0.7s ease forwards 0.65s;
     }
 
     .hero-certs {
@@ -145,95 +165,109 @@
       gap: 10px;
       margin-bottom: 48px;
       opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.8s;
+      animation: fadeUp 0.7s ease forwards 0.8s;
     }
 
     .cert-badge {
       font-family: var(--mono);
-      font-size: 11px;
-      padding: 5px 12px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      color: var(--accent2);
-      letter-spacing: 0.08em;
-      background: rgba(0,255,157,0.05);
+      font-size: 10px;
+      padding: 5px 13px;
+      border: 1px solid rgba(200,129,58,0.3);
+      border-radius: 2px;
+      color: var(--copper-light);
+      letter-spacing: 0.1em;
+      background: var(--copper-dim);
     }
 
     .hero-actions {
       display: flex;
       gap: 16px;
       opacity: 0;
-      animation: fadeUp 0.6s ease forwards 1s;
+      animation: fadeUp 0.7s ease forwards 0.95s;
     }
 
     .btn-primary {
       font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: 0.12em;
+      font-size: 11px;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      padding: 14px 28px;
-      background: var(--accent);
+      padding: 15px 32px;
+      background: var(--copper);
       color: var(--bg);
       border: none;
-      border-radius: 4px;
+      border-radius: 2px;
       text-decoration: none;
       font-weight: 500;
-      transition: opacity 0.2s;
+      transition: background 0.2s;
     }
 
-    .btn-primary:hover { opacity: 0.85; }
+    .btn-primary:hover { background: var(--copper-light); }
 
     .btn-ghost {
       font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: 0.12em;
+      font-size: 11px;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      padding: 14px 28px;
+      padding: 15px 32px;
       background: transparent;
       color: var(--text);
       border: 1px solid var(--border);
-      border-radius: 4px;
+      border-radius: 2px;
       text-decoration: none;
       transition: border-color 0.2s, color 0.2s;
     }
 
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-ghost:hover { border-color: var(--copper); color: var(--copper-light); }
 
-    /* Sections */
     section {
-      padding: 100px 0;
+      padding: 110px 0;
       border-top: 1px solid var(--border);
     }
 
     .section-label {
       font-family: var(--mono);
-      font-size: 11px;
-      color: var(--accent);
-      letter-spacing: 0.25em;
+      font-size: 10px;
+      color: var(--copper);
+      letter-spacing: 0.3em;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 1px;
+      background: var(--copper);
+      opacity: 0.4;
     }
 
     .section-title {
-      font-family: var(--heading-font);
-      font-size: clamp(32px, 4vw, 48px);
+      font-family: var(--heading);
+      font-size: clamp(36px, 4vw, 54px);
+      font-weight: 300;
       color: #fff;
-      margin-bottom: 48px;
+      margin-bottom: 56px;
       line-height: 1.1;
     }
 
-    /* About */
+    .section-title em { font-style: italic; color: var(--copper-light); }
+
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 72px;
       align-items: start;
     }
 
     .about-text p {
       color: var(--muted);
       font-size: 16px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      line-height: 1.85;
     }
 
     .about-text p strong { color: var(--text); font-weight: 500; }
@@ -241,128 +275,138 @@
     .about-stats {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 2px;
     }
 
     .stat-box {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 24px;
+      padding: 28px 24px;
+      transition: border-color 0.2s;
     }
 
+    .stat-box:hover { border-color: rgba(200,129,58,0.3); }
+
     .stat-number {
-      font-family: var(--heading-font);
-      font-size: 40px;
-      color: var(--accent);
+      font-family: var(--heading);
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--copper-light);
       line-height: 1;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .stat-label {
       font-family: var(--mono);
-      font-size: 11px;
+      font-size: 10px;
       color: var(--muted);
       letter-spacing: 0.1em;
       text-transform: uppercase;
+      line-height: 1.5;
     }
 
-    /* Experience */
     .exp-item {
       display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 48px;
-      margin-bottom: 56px;
-      padding-bottom: 56px;
+      grid-template-columns: 220px 1fr;
+      gap: 56px;
+      margin-bottom: 64px;
+      padding-bottom: 64px;
       border-bottom: 1px solid var(--border);
     }
 
     .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
-    .exp-meta {
-      font-family: var(--mono);
-      font-size: 12px;
-    }
+    .exp-meta { padding-top: 4px; }
 
     .exp-company {
-      color: var(--accent);
-      margin-bottom: 4px;
-      letter-spacing: 0.05em;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--copper);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
     }
 
     .exp-date {
-      color: var(--muted);
+      font-family: var(--mono);
       font-size: 11px;
-      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 4px;
     }
 
     .exp-location {
+      font-family: var(--mono);
+      font-size: 10px;
       color: var(--muted);
-      font-size: 11px;
-      margin-top: 4px;
+      opacity: 0.6;
     }
 
     .exp-title {
-      font-family: var(--heading-font);
-      font-size: 22px;
+      font-family: var(--heading);
+      font-size: 26px;
+      font-weight: 400;
       color: #fff;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .exp-desc {
       color: var(--muted);
       font-size: 15px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      line-height: 1.75;
     }
 
     .exp-bullets {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
     .exp-bullets li {
       font-size: 14px;
       color: var(--muted);
-      padding-left: 20px;
+      padding-left: 22px;
       position: relative;
+      line-height: 1.7;
     }
 
     .exp-bullets li::before {
-      content: '→';
+      content: '—';
       position: absolute;
       left: 0;
-      color: var(--accent);
-      font-size: 12px;
+      color: var(--copper);
     }
 
     .exp-bullets li strong { color: var(--text); font-weight: 500; }
 
-    /* Skills */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2px;
     }
 
     .skill-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 28px;
-      transition: border-color 0.2s;
+      padding: 32px;
+      transition: border-color 0.2s, background 0.2s;
     }
 
-    .skill-card:hover { border-color: rgba(0,194,255,0.3); }
+    .skill-card:hover {
+      border-color: rgba(200,129,58,0.25);
+      background: var(--surface2);
+    }
 
     .skill-card-title {
       font-family: var(--mono);
-      font-size: 11px;
-      color: var(--accent);
-      letter-spacing: 0.15em;
+      font-size: 10px;
+      color: var(--copper);
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
     }
 
     .skill-tags {
@@ -375,80 +419,80 @@
       font-family: var(--mono);
       font-size: 11px;
       padding: 4px 10px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.03);
       border: 1px solid var(--border);
-      border-radius: 3px;
+      border-radius: 2px;
       color: var(--text);
+      opacity: 0.8;
     }
 
-    /* Certifications */
     .certs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 2px;
     }
 
     .cert-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 24px;
+      padding: 28px;
       transition: border-color 0.2s, transform 0.2s;
     }
 
-    .cert-card:hover { border-color: rgba(0,255,157,0.3); transform: translateY(-2px); }
-
-    .cert-card.pending { opacity: 0.6; border-style: dashed; }
+    .cert-card:hover { border-color: rgba(200,129,58,0.3); transform: translateY(-2px); }
+    .cert-card.pending { opacity: 0.5; border-style: dashed; }
 
     .cert-name {
-      font-family: var(--heading-font);
-      font-size: 18px;
+      font-family: var(--heading);
+      font-size: 22px;
+      font-weight: 400;
       color: #fff;
       margin-bottom: 6px;
     }
 
     .cert-issuer {
       font-family: var(--mono);
-      font-size: 11px;
-      color: var(--accent2);
-      letter-spacing: 0.1em;
-      margin-bottom: 4px;
+      font-size: 10px;
+      color: var(--copper);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
     }
 
     .cert-date {
       font-family: var(--mono);
-      font-size: 11px;
+      font-size: 10px;
       color: var(--muted);
     }
 
-    /* Projects */
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 2px;
     }
 
     .project-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 32px;
+      padding: 36px;
       transition: border-color 0.2s;
     }
 
-    .project-card:hover { border-color: rgba(0,194,255,0.3); }
+    .project-card:hover { border-color: rgba(200,129,58,0.3); }
 
     .project-title {
-      font-family: var(--heading-font);
-      font-size: 22px;
+      font-family: var(--heading);
+      font-size: 24px;
+      font-weight: 400;
       color: #fff;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .project-desc {
       color: var(--muted);
       font-size: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+      line-height: 1.75;
     }
 
     .project-tags {
@@ -460,37 +504,44 @@
     .project-tag {
       font-family: var(--mono);
       font-size: 10px;
-      padding: 3px 8px;
-      border: 1px solid rgba(0,194,255,0.2);
-      border-radius: 3px;
-      color: var(--accent);
+      padding: 3px 9px;
+      border: 1px solid rgba(200,129,58,0.25);
+      border-radius: 2px;
+      color: var(--copper-light);
       letter-spacing: 0.08em;
+      background: var(--copper-dim);
     }
 
-    /* Contact */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      gap: 80px;
       align-items: start;
     }
 
     .contact-text {
       font-size: 16px;
       color: var(--muted);
-      margin-bottom: 32px;
+      margin-bottom: 36px;
+      line-height: 1.85;
     }
 
     .contact-links {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 28px;
+    }
+
+    .contact-link-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--copper);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
     }
 
     .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 12px;
       font-family: var(--mono);
       font-size: 13px;
       color: var(--text);
@@ -498,40 +549,33 @@
       transition: color 0.2s;
     }
 
-    .contact-link:hover { color: var(--accent); }
+    .contact-link:hover { color: var(--copper-light); }
 
-    .contact-link-label {
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    /* Footer */
     footer {
       position: relative;
       z-index: 1;
       text-align: center;
-      padding: 40px 32px;
+      padding: 40px;
       border-top: 1px solid var(--border);
       font-family: var(--mono);
-      font-size: 11px;
+      font-size: 10px;
       color: var(--muted);
-      letter-spacing: 0.1em;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(24px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
-      main { padding: 0 20px; }
-      .about-grid, .contact-grid, .projects-grid { grid-template-columns: 1fr; gap: 32px; }
-      .exp-item { grid-template-columns: 1fr; gap: 12px; }
+      main { padding: 0 24px; }
+      .about-grid, .contact-grid, .projects-grid { grid-template-columns: 1fr; gap: 40px; }
+      .exp-item { grid-template-columns: 1fr; gap: 16px; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -551,17 +595,18 @@
 
   <main>
 
-    <!-- HERO -->
     <section class="hero" id="top">
-      <div class="hero-tag">// Available for new opportunities</div>
-      <h1>Luke<br><span>Kim</span></h1>
-      <p class="hero-sub">Information Security Analyst & Systems Administrator with 4+ years in enterprise IT security — vulnerability management, incident response, SIEM operations, and endpoint hardening.</p>
+      <div class="hero-eyebrow">Open to new opportunities</div>
+      <h1>Luke<br><em>Kim</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">IT professional with 4+ years of enterprise experience across security operations, systems administration, infrastructure, and endpoint management — built in real environments with real accountability.</p>
       <div class="hero-certs">
-        <span class="cert-badge">CompTIA Security+</span>
-        <span class="cert-badge">CompTIA Network+</span>
-        <span class="cert-badge">CompTIA A+</span>
+        <span class="cert-badge">Security+</span>
+        <span class="cert-badge">Network+</span>
+        <span class="cert-badge">A+</span>
         <span class="cert-badge">ITIL v4</span>
         <span class="cert-badge">DoD 8570 IAT Level II</span>
+        <span class="cert-badge">B.S. IT · WGU 2026</span>
       </div>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Get In Touch</a>
@@ -569,20 +614,20 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about">
-      <div class="section-label">// 01 — About</div>
-      <h2 class="section-title">Security-first.<br>Systems-minded.</h2>
+      <div class="section-label">01 · About</div>
+      <h2 class="section-title">Security-minded.<br><em>Systems-fluent.</em></h2>
       <div class="about-grid">
         <div class="about-text">
-          <p>I'm an IT security professional based in <strong>Vienna, VA</strong>, currently working as a <strong>Systems Administrator at CATHEXIS</strong> in Tysons, VA.</p>
-          <p>My background spans enterprise security analysis, vulnerability management, SIEM operations, and endpoint hardening — built across real environments with real accountability. I've served as the <strong>primary security resource</strong> for a 400+ user enterprise, leading MFA rollout, authoring incident response playbooks, and driving measurable reductions in security incidents.</p>
-          <p>I'm actively pursuing my <strong>B.S. in Information Technology at WGU</strong> (expected 2026) alongside full-time work, and working toward CySA+, SC-200, and AZ-500.</p>
+          <p>I'm an IT professional based in <strong>Northern Virginia / DMV area</strong>, currently working as a <strong>Systems Administrator at CATHEXIS</strong> in Tysons, VA.</p>
+          <p>My background spans enterprise security operations, vulnerability management, SIEM analysis, endpoint hardening, identity governance, and cross-functional IT support — developed across environments where accuracy and accountability matter.</p>
+          <p>I bring the same rigor to every role I step into, whether that's securing infrastructure, administering systems, or building the documentation that keeps teams aligned and auditors satisfied.</p>
+          <p>Currently completing my <strong>B.S. in Information Technology at WGU</strong> (expected 2026) and pursuing CySA+, SC-200, and AZ-500.</p>
         </div>
         <div class="about-stats">
           <div class="stat-box">
             <div class="stat-number">4+</div>
-            <div class="stat-label">Years in Enterprise IT Security</div>
+            <div class="stat-label">Years Enterprise IT Experience</div>
           </div>
           <div class="stat-box">
             <div class="stat-number">400+</div>
@@ -600,10 +645,9 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section id="experience">
-      <div class="section-label">// 02 — Experience</div>
-      <h2 class="section-title">Where I've<br>done the work.</h2>
+      <div class="section-label">02 · Experience</div>
+      <h2 class="section-title">Where I've<br><em>done the work.</em></h2>
 
       <div class="exp-item">
         <div class="exp-meta">
@@ -613,7 +657,7 @@
         </div>
         <div>
           <div class="exp-title">Systems Administrator</div>
-          <p class="exp-desc">Enterprise systems administration with a security-first approach.</p>
+          <p class="exp-desc">Enterprise systems administration with a security-first approach across infrastructure, endpoints, and identity management.</p>
         </div>
       </div>
 
@@ -624,14 +668,14 @@
           <div class="exp-location">Washington, DC</div>
         </div>
         <div>
-          <div class="exp-title">Information Security Analyst / IT Technician II</div>
-          <p class="exp-desc">Primary information security resource for a 400+ user enterprise — full security analyst scope alongside IT operations.</p>
+          <div class="exp-title">IT Service Desk II</div>
+          <p class="exp-desc">Served as the primary information security resource for a 400+ user enterprise — full security analyst scope alongside IT operations responsibilities.</p>
           <ul class="exp-bullets">
-            <li>Executed <strong>vulnerability management cycles</strong> against Windows Server assets — CVE analysis, risk prioritization, patch coordination, NIST SP 800-53-aligned documentation.</li>
-            <li>Reviewed SIEM logs in <strong>Splunk and Rapid7 InsightIDR</strong> — investigating security exceptions, escalating incidents, and documenting all actions.</li>
-            <li>Led <strong>org-wide MFA rollout</strong> across 400+ accounts, driving a measurable 30–40% reduction in credential compromise events.</li>
-            <li>Authored <strong>20+ security SOPs and incident response playbooks</strong> — audit-ready and consistently followed.</li>
-            <li>Conducted root-cause analysis on recurring incidents — communicating findings to management through metrics reports.</li>
+            <li>Executed <strong>vulnerability management cycles</strong> against Windows Server assets — CVE analysis, risk prioritization, patch coordination, and NIST SP 800-53-aligned documentation.</li>
+            <li>Reviewed SIEM logs in <strong>Splunk and Rapid7 InsightIDR</strong> — investigating security exceptions, escalating incidents, and documenting all outcomes.</li>
+            <li>Led <strong>org-wide MFA rollout</strong> across 400+ accounts, driving a 30–40% reduction in credential compromise events.</li>
+            <li>Authored <strong>20+ security SOPs and incident response playbooks</strong> — audit-ready and consistently followed across teams.</li>
+            <li>Conducted root-cause analysis on recurring incidents — communicating findings and remediation status to management.</li>
           </ul>
         </div>
       </div>
@@ -643,11 +687,12 @@
           <div class="exp-location">Washington, DC</div>
         </div>
         <div>
-          <div class="exp-title">Information Security Analyst / IT Technician I</div>
+          <div class="exp-title">IT Service Desk I</div>
           <ul class="exp-bullets">
-            <li>Designed and deployed <strong>RBAC-based onboarding/offboarding workflows</strong> — reducing provisioning time by ~25%.</li>
+            <li>Investigated security violations and endpoint alerts — documenting findings, coordinating resolution, and tracking items through to closure.</li>
+            <li>Designed and deployed <strong>RBAC-based onboarding and offboarding workflows</strong> — reducing provisioning time by ~25% with fully auditable account lifecycle records.</li>
             <li>Maintained 100% compliant hardware asset inventory with data-safe decommissioning procedures.</li>
-            <li>Documented security control changes in <strong>ServiceNow</strong> — maintaining audit-ready records.</li>
+            <li>Documented system configurations and security control changes in <strong>ServiceNow</strong> — maintaining audit-ready records of all security-relevant activity.</li>
           </ul>
         </div>
       </div>
@@ -662,26 +707,26 @@
           <div class="exp-title">Clinical Technology Specialist</div>
           <ul class="exp-bullets">
             <li>Secured multi-site clinical infrastructure under <strong>HIPAA requirements</strong> — hardened network and endpoint configurations to protect PHI.</li>
-            <li>Administered <strong>Salesforce CRM</strong> with strict RBAC and auditable access controls.</li>
-            <li>Delivered phishing and security awareness training across a distributed clinical workforce.</li>
+            <li>Administered <strong>Salesforce CRM</strong> with strict RBAC enforcement and auditable access controls.</li>
+            <li>Delivered phishing, password hygiene, and security awareness training across a distributed clinical workforce.</li>
           </ul>
         </div>
       </div>
 
     </section>
 
-    <!-- SKILLS -->
     <section id="skills">
-      <div class="section-label">// 03 — Skills</div>
-      <h2 class="section-title">The technical<br>toolkit.</h2>
+      <div class="section-label">03 · Skills</div>
+      <h2 class="section-title">The technical<br><em>toolkit.</em></h2>
       <div class="skills-grid">
         <div class="skill-card">
-          <div class="skill-card-title">SIEM & Log Analysis</div>
+          <div class="skill-card-title">Security Operations</div>
           <div class="skill-tags">
             <span class="skill-tag">Splunk</span>
             <span class="skill-tag">Rapid7 InsightIDR</span>
             <span class="skill-tag">Microsoft Sentinel</span>
             <span class="skill-tag">Alert Triage</span>
+            <span class="skill-tag">Incident Response</span>
             <span class="skill-tag">IOC Identification</span>
           </div>
         </div>
@@ -710,8 +755,7 @@
           <div class="skill-card-title">Networking & Infrastructure</div>
           <div class="skill-tags">
             <span class="skill-tag">TCP/IP</span>
-            <span class="skill-tag">DNS</span>
-            <span class="skill-tag">DHCP</span>
+            <span class="skill-tag">DNS / DHCP</span>
             <span class="skill-tag">VPN</span>
             <span class="skill-tag">Snort IDS/IPS</span>
             <span class="skill-tag">pfSense</span>
@@ -743,10 +787,9 @@
       </div>
     </section>
 
-    <!-- CERTIFICATIONS -->
     <section id="certs">
-      <div class="section-label">// 04 — Certifications</div>
-      <h2 class="section-title">Credentials<br>& credentials in progress.</h2>
+      <div class="section-label">04 · Certifications</div>
+      <h2 class="section-title">Credentials &<br><em>credentials in progress.</em></h2>
       <div class="certs-grid">
         <div class="cert-card">
           <div class="cert-issuer">CompTIA</div>
@@ -786,10 +829,9 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects">
-      <div class="section-label">// 05 — Projects</div>
-      <h2 class="section-title">Built &<br>documented.</h2>
+      <div class="section-label">05 · Projects</div>
+      <h2 class="section-title">Built &<br><em>documented.</em></h2>
       <div class="projects-grid">
         <div class="project-card">
           <div class="project-title">Home Security Operations & Vulnerability Lab</div>
@@ -800,29 +842,26 @@
             <span class="project-tag">pfSense</span>
             <span class="project-tag">Snort</span>
             <span class="project-tag">Active Directory</span>
-            <span class="project-tag">Vulnerability Testing</span>
           </div>
         </div>
         <div class="project-card">
           <div class="project-title">Resume Tailoring Tool</div>
-          <p class="project-desc">Python-based CLI tool that takes a base Word resume and a job description and outputs a tailored resume with strong language and metrics — built using Claude Code as part of a career development automation project.</p>
+          <p class="project-desc">Python-based automation tool that takes a base resume and a job description and outputs a tailored version with targeted language and metrics — built using Claude Code as part of a broader career development automation project.</p>
           <div class="project-tags">
             <span class="project-tag">Python</span>
             <span class="project-tag">Claude Code</span>
             <span class="project-tag">Automation</span>
-            <span class="project-tag">NLP</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
-      <div class="section-label">// 06 — Contact</div>
-      <h2 class="section-title">Let's talk<br>opportunities.</h2>
+      <div class="section-label">06 · Contact</div>
+      <h2 class="section-title">Let's talk<br><em>opportunities.</em></h2>
       <div class="contact-grid">
         <div>
-          <p class="contact-text">I'm open to roles in security analysis, systems administration, cloud security, and SOC operations. If you're looking for someone who's done the work in a real enterprise environment — let's connect.</p>
+          <p class="contact-text">I'm open to roles across IT security, systems administration, cloud infrastructure, and operations — anywhere my background in enterprise environments translates into immediate value. If that's your team, let's connect.</p>
           <a href="mailto:yoonkeem@gmail.com" class="btn-primary">Send an Email</a>
         </div>
         <div class="contact-links">
@@ -836,11 +875,11 @@
           </div>
           <div>
             <div class="contact-link-label">GitHub</div>
-            <a href="https://github.com/yoonkeeem" target="_blank" class="contact-link">github.com/yoonkeeem</a>
+            <a href="https://github.com/lukekimIT" target="_blank" class="contact-link">github.com/lukekimIT</a>
           </div>
           <div>
             <div class="contact-link-label">Location</div>
-            <a class="contact-link">Vienna, VA</a>
+            <span class="contact-link">Northern Virginia · DMV Area</span>
           </div>
         </div>
       </div>
@@ -849,7 +888,7 @@
   </main>
 
   <footer>
-    <p>Luke Kim · Vienna, VA · Built with HTML & CSS · Hosted on GitHub Pages</p>
+    Luke Kim · Northern Virginia · Built with HTML & CSS · Hosted on GitHub Pages
   </footer>
 
 </body>
