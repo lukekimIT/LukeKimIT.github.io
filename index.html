@@ -22,34 +22,23 @@
       --nav-bg: rgba(30,30,30,0.96);
     }
 
-    /* Dark mode — brighter muted text + size bumps */
+    /* Dark mode — brighter muted text for readability */
     [data-theme="dark"] { --muted: #bbbbbb; }
 
     [data-theme="dark"] .stat-label,
     [data-theme="dark"] .cert-date,
     [data-theme="dark"] .project-tag,
     [data-theme="dark"] .contact-link-label,
-    [data-theme="dark"] footer { font-size: 11px; color: #cccccc; }
-
-    [data-theme="dark"] .cert-issuer { font-size: 11px; }
-
-    [data-theme="dark"] .exp-company,
-    [data-theme="dark"] .section-label { font-size: 12px; }
+    [data-theme="dark"] footer { color: #cccccc; }
 
     [data-theme="dark"] .exp-date,
-    [data-theme="dark"] .exp-location { font-size: 11px; color: #bbbbbb; }
-
-    [data-theme="dark"] .skill-card-title { font-size: 11px; }
-
-    [data-theme="dark"] .skill-tag,
-    [data-theme="dark"] .cert-badge,
-    [data-theme="dark"] .nav-links a { font-size: 12px; }
+    [data-theme="dark"] .exp-location { color: #bbbbbb; }
 
     [data-theme="dark"] .exp-bullets li,
     [data-theme="dark"] .exp-desc,
     [data-theme="dark"] .project-desc,
     [data-theme="dark"] .about-text p,
-    [data-theme="dark"] .contact-text { color: #cccccc; font-size: 14px; }
+    [data-theme="dark"] .contact-text { color: #cccccc; }
 
     [data-theme="dark"] .exp-bullets li strong,
     [data-theme="dark"] .about-text p strong { color: #e8e8e8; }
@@ -77,9 +66,9 @@
       transition: background 0.3s ease, border-color 0.3s ease;
     }
     .nav-left { display: flex; align-items: center; gap: 36px; }
-    .nav-logo { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; }
+    .nav-logo { font-family: var(--mono); font-size: 15px; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; }
     .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a { font-family: var(--mono); font-size: 11px; color: var(--muted); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a { font-family: var(--mono); font-size: 12px; color: var(--muted); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
 
     /* UIVERSE SWITCH */
@@ -169,14 +158,14 @@
     .hero-divider { width: 48px; height: 1px; background: var(--border-dark); margin-bottom: 20px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.42s; }
     .hero-sub { font-size: 16px; color: var(--muted); max-width: 500px; margin-bottom: 32px; line-height: 1.75; opacity: 0; animation: fadeUp 0.6s ease forwards 0.52s; }
     .hero-certs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.64s; }
-    .cert-badge { font-family: var(--mono); font-size: 10px; padding: 4px 11px; border: 1px solid var(--green-border); border-radius: 2px; color: var(--green); letter-spacing: 0.08em; background: var(--green-dim); }
+    .cert-badge { font-family: var(--mono); font-size: 11px; padding: 4px 11px; border: 1px solid var(--green-border); border-radius: 2px; color: var(--green); letter-spacing: 0.08em; background: var(--green-dim); }
     .hero-actions { display: flex; gap: 12px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.76s; }
     .btn-primary { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 13px 28px; background: var(--accent); color: #fff; border: none; border-radius: 2px; text-decoration: none; font-weight: 500; transition: background 0.2s; }
     .btn-primary:hover { background: var(--accent-light); }
     .btn-ghost { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 13px 28px; background: transparent; color: var(--text); border: 1px solid var(--border-dark); border-radius: 2px; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
     .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
     section { padding: 80px 0; border-top: 1px solid var(--border); }
-    .section-label { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .section-label { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
     .section-label::after { content: ''; display: block; width: 36px; height: 1px; background: var(--accent); opacity: 0.35; }
     .section-title { font-family: var(--heading); font-size: clamp(30px, 3.5vw, 46px); font-weight: 300; color: var(--text); margin-bottom: 40px; line-height: 1.1; }
     .section-title em { font-style: italic; color: var(--accent); }
@@ -187,12 +176,12 @@
     .stat-box { background: var(--surface); border: 1px solid var(--border); padding: 22px 20px; transition: border-color 0.2s, background 0.3s; }
     .stat-box:hover { border-color: var(--accent-light); }
     .stat-number { font-family: var(--heading); font-size: 40px; font-weight: 300; color: var(--accent); line-height: 1; margin-bottom: 6px; }
-    .stat-label { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.5; }
+    .stat-label { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.5; }
     .exp-item { display: grid; grid-template-columns: 200px 1fr; gap: 40px; margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--border); }
     .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .exp-company { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
-    .exp-date { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-bottom: 3px; }
-    .exp-location { font-family: var(--mono); font-size: 10px; color: var(--muted); opacity: 0.7; }
+    .exp-company { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+    .exp-date { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-bottom: 3px; }
+    .exp-location { font-family: var(--mono); font-size: 11px; color: var(--muted); opacity: 0.7; }
     .exp-title { font-family: var(--heading); font-size: 24px; font-weight: 400; color: var(--text); margin-bottom: 10px; }
     .exp-desc { color: var(--muted); font-size: 14px; margin-bottom: 16px; line-height: 1.7; }
     .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 9px; }
@@ -202,9 +191,9 @@
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2px; }
     .skill-card { background: var(--surface); border: 1px solid var(--border); padding: 24px 26px; transition: border-color 0.2s, background 0.3s; }
     .skill-card:hover { border-color: var(--accent-light); }
-    .skill-card-title { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .skill-card-title { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .skill-tag { font-family: var(--mono); font-size: 10px; padding: 3px 9px; background: var(--bg2); border: 1px solid var(--border); border-radius: 2px; color: var(--text); transition: background 0.3s; }
+    .skill-tag { font-family: var(--mono); font-size: 11px; padding: 3px 9px; background: var(--bg2); border: 1px solid var(--border); border-radius: 2px; color: var(--text); transition: background 0.3s; }
     .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2px; }
     .cert-card { background: var(--surface); border: 1px solid var(--border); padding: 22px; transition: border-color 0.2s, transform 0.2s, background 0.3s; }
     .cert-card:hover { border-color: var(--green); transform: translateY(-2px); }
@@ -220,22 +209,22 @@
     .cert-card-text { flex: 1; min-width: 0; }
 
     .cert-name { font-family: var(--heading); font-size: 20px; font-weight: 400; color: var(--text); margin-bottom: 4px; }
-    .cert-issuer { font-family: var(--mono); font-size: 9px; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
-    .cert-date { font-family: var(--mono); font-size: 9px; color: var(--muted); }
+    .cert-issuer { font-family: var(--mono); font-size: 11px; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
+    .cert-date { font-family: var(--mono); font-size: 11px; color: var(--muted); }
     .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
     .project-card { background: var(--surface); border: 1px solid var(--border); padding: 28px 30px; transition: border-color 0.2s, background 0.3s; }
     .project-card:hover { border-color: var(--accent-light); }
     .project-title { font-family: var(--heading); font-size: 22px; font-weight: 400; color: var(--text); margin-bottom: 10px; }
     .project-desc { color: var(--muted); font-size: 13.5px; margin-bottom: 20px; line-height: 1.7; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .project-tag { font-family: var(--mono); font-size: 9px; padding: 3px 8px; border: 1px solid var(--green-border); border-radius: 2px; color: var(--green); letter-spacing: 0.08em; background: var(--green-dim); }
+    .project-tag { font-family: var(--mono); font-size: 11px; padding: 3px 8px; border: 1px solid var(--green-border); border-radius: 2px; color: var(--green); letter-spacing: 0.08em; background: var(--green-dim); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
     .contact-text { font-size: 15px; color: var(--muted); margin-bottom: 28px; line-height: 1.8; }
     .contact-links { display: flex; flex-direction: column; gap: 22px; }
-    .contact-link-label { font-family: var(--mono); font-size: 9px; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 3px; }
+    .contact-link-label { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 3px; }
     .contact-link { font-family: var(--mono); font-size: 12px; color: var(--text); text-decoration: none; transition: color 0.2s; }
     .contact-link:hover { color: var(--accent); }
-    footer { text-align: center; padding: 32px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; }
+    footer { text-align: center; padding: 32px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 768px) {
       nav { padding: 0 20px; } .nav-links { display: none; } main { padding: 0 20px; }
@@ -251,6 +240,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#prodev">Dev</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#certs">Certifications</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -335,7 +325,7 @@
       <div class="exp-item">
         <div class="exp-meta">
           <div class="exp-company">Museum of the Bible</div>
-          <div class="exp-date">Aug 2023 – Recent</div>
+          <div class="exp-date">Aug 2023 – Apr 2026</div>
           <div class="exp-location">Washington, DC</div>
         </div>
         <div>
@@ -343,7 +333,7 @@
           <p class="exp-desc">Served as the primary information security resource for a 400+ user enterprise — full security analyst scope alongside IT operations responsibilities.</p>
           <ul class="exp-bullets">
             <li>Executed <strong>vulnerability management cycles</strong> against Windows Server assets — CVE analysis, risk prioritization, patch coordination, and NIST SP 800-53-aligned documentation.</li>
-            <li>Reviewed SIEM logs in <strong>Splunk and Rapid7 InsightIDR</strong> — investigating security exceptions, escalating incidents, and documenting all outcomes.</li>
+            <li>Led <strong>Windows 11 enterprise upgrade</strong> across endpoint fleet — coordinating rollout planning, compatibility assessment, and deployment with minimal operational disruption.</li>
             <li>Led <strong>org-wide MFA rollout</strong> across 400+ accounts, driving a 30–40% reduction in credential compromise events.</li>
             <li>Authored <strong>20+ security SOPs and incident response playbooks</strong> — audit-ready and consistently followed across teams.</li>
             <li>Conducted root-cause analysis on recurring incidents — communicating findings and remediation status to management.</li>
@@ -362,7 +352,7 @@
             <li>Investigated security violations and endpoint alerts — documenting findings, coordinating resolution, and tracking items through to closure.</li>
             <li>Designed and deployed <strong>RBAC-based onboarding and offboarding workflows</strong> — reducing provisioning time by ~25% with fully auditable account lifecycle records.</li>
             <li>Maintained 100% compliant hardware asset inventory with data-safe decommissioning procedures.</li>
-            <li>Documented system configurations and security control changes in <strong>ServiceNow</strong> — maintaining audit-ready records of all security-relevant activity.</li>
+            <li>Documented system configurations and security control changes using the <strong>ManageEngine suite</strong> — maintaining audit-ready records of all security-relevant activity and supporting management visibility into security posture.</li>
           </ul>
         </div>
       </div>
@@ -376,28 +366,67 @@
           <div class="exp-title">Clinical Technology Specialist</div>
           <ul class="exp-bullets">
             <li>Secured multi-site clinical infrastructure under <strong>HIPAA requirements</strong> — hardened network and endpoint configurations to protect PHI.</li>
-            <li>Administered <strong>Salesforce CRM</strong> with strict RBAC enforcement and auditable access controls.</li>
+            <li>Administered <strong>Salesforce CRM and ZOHO CRM</strong> with strict RBAC enforcement and auditable access controls — ensuring patient and organizational data remained accessible only to authorized personnel.</li>
+            <li>Managed end-user support and ticket workflows through <strong>Zendesk</strong> — tracking issues to resolution and maintaining service documentation across distributed clinical sites.</li>
+            <li>Deployed and supported <strong>TeamViewer</strong> for remote technical assistance across multi-site clinical environments — reducing on-site response time and enabling faster issue resolution.</li>
             <li>Delivered phishing, password hygiene, and security awareness training across a distributed clinical workforce.</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <section id="prodev">
+      <div class="section-label">03 · Professional Development</div>
+      <h2 class="section-title">Beyond the<br><em>day job.</em></h2>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-company">Hobby Lobby</div>
+          <div class="exp-date">Feb 2024</div>
+          <div class="exp-location">Oklahoma City, OK</div>
+        </div>
+        <div>
+          <div class="exp-title">SOC Operations Program</div>
+          <p class="exp-desc">Participated in live security operations within a production SOC environment.</p>
+          <ul class="exp-bullets">
+            <li>Reviewed <strong>SIEM alerts in Splunk and Rapid7 InsightIDR</strong> — investigating security exceptions, escalating incidents outside runbook guidance, and documenting all actions and outcomes.</li>
+            <li>Participated in live security operations — coordinating incident escalation and managing the full remediation ticket lifecycle in a production SOC environment.</li>
+            <li>Monitored honeypots and analyzed attack logs to identify adversarial TTPs — contributing root-cause findings and detection improvement recommendations to the security operations team.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-company">Askeal AI</div>
+          <div class="exp-date">Oct 2025 – Ongoing</div>
+          <div class="exp-location">Remote</div>
+        </div>
+        <div>
+          <div class="exp-title">Cybersecurity AI Tools Evaluator</div>
+          <ul class="exp-bullets">
+            <li>Evaluated AI-driven threat detection and incident response tools against real-world security scenarios — assessing detection accuracy, identifying gaps, and delivering structured practitioner feedback.</li>
+            <li>Feedback directly shaped product iterations across multiple tool assessments.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section id="skills">
-      <div class="section-label">03 · Skills</div>
+      <div class="section-label">04 · Skills</div>
       <h2 class="section-title">The technical<br><em>toolkit.</em></h2>
       <div class="skills-grid">
         <div class="skill-card"><div class="skill-card-title">Security Operations</div><div class="skill-tags"><span class="skill-tag">Splunk</span><span class="skill-tag">Rapid7 InsightIDR</span><span class="skill-tag">Microsoft Sentinel</span><span class="skill-tag">Alert Triage</span><span class="skill-tag">Incident Response</span><span class="skill-tag">IOC Identification</span></div></div>
         <div class="skill-card"><div class="skill-card-title">Vulnerability Management</div><div class="skill-tags"><span class="skill-tag">CVE Analysis</span><span class="skill-tag">Risk Prioritization</span><span class="skill-tag">Patch Coordination</span><span class="skill-tag">Windows Server Hardening</span><span class="skill-tag">NIST SP 800-53</span></div></div>
         <div class="skill-card"><div class="skill-card-title">Endpoint & Identity</div><div class="skill-tags"><span class="skill-tag">Intune MDM</span><span class="skill-tag">Azure AD</span><span class="skill-tag">RBAC</span><span class="skill-tag">MFA Deployment</span><span class="skill-tag">Conditional Access</span><span class="skill-tag">Least Privilege</span></div></div>
         <div class="skill-card"><div class="skill-card-title">Networking & Infrastructure</div><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS / DHCP</span><span class="skill-tag">VPN</span><span class="skill-tag">Snort IDS/IPS</span><span class="skill-tag">pfSense</span><span class="skill-tag">Network Segmentation</span></div></div>
-        <div class="skill-card"><div class="skill-card-title">Cloud & Platforms</div><div class="skill-tags"><span class="skill-tag">Microsoft Azure</span><span class="skill-tag">Microsoft 365</span><span class="skill-tag">AWS Foundational</span><span class="skill-tag">SharePoint</span><span class="skill-tag">ServiceNow</span><span class="skill-tag">Salesforce</span></div></div>
+        <div class="skill-card"><div class="skill-card-title">Cloud & Platforms</div><div class="skill-tags"><span class="skill-tag">Microsoft Azure</span><span class="skill-tag">Microsoft 365</span><span class="skill-tag">AWS Foundational</span><span class="skill-tag">SharePoint</span><span class="skill-tag">ServiceNow</span><span class="skill-tag">ManageEngine</span><span class="skill-tag">Salesforce</span><span class="skill-tag">ZOHO CRM</span><span class="skill-tag">Zendesk</span><span class="skill-tag">TeamViewer</span></div></div>
         <div class="skill-card"><div class="skill-card-title">Frameworks & Standards</div><div class="skill-tags"><span class="skill-tag">MITRE ATT&CK</span><span class="skill-tag">CIS Controls</span><span class="skill-tag">ITIL v4</span><span class="skill-tag">Zero Trust</span><span class="skill-tag">DoD 8570</span><span class="skill-tag">HIPAA</span></div></div>
       </div>
     </section>
 
     <section id="certs">
-      <div class="section-label">04 · Certifications</div>
+      <div class="section-label">05 · Certifications</div>
       <h2 class="section-title">Earned<br><em>certifications.</em></h2>
       <div class="certs-grid">
         <div class="cert-card">
@@ -415,7 +444,7 @@
             <div class="cert-card-text">
               <div class="cert-issuer">CompTIA</div>
               <div class="cert-name">Network+</div>
-              <div class="cert-date">Apr 2024 · Expires Apr 2027</div>
+              <div class="cert-date">Apr 2024 · Expires Jun 2028</div>
             </div>
             <div class="cert-icon"><img src="https://images.credly.com/images/c70ba73e-3c8a-46fa-9d60-4a9af94ad662/blob" alt="CompTIA Network+"></div>
           </div>
@@ -425,7 +454,7 @@
             <div class="cert-card-text">
               <div class="cert-issuer">CompTIA</div>
               <div class="cert-name">A+</div>
-              <div class="cert-date">Sep 2022 · Expires Apr 2027</div>
+              <div class="cert-date">Sep 2022 · Expires Jun 2028</div>
             </div>
             <div class="cert-icon"><img src="https://images.credly.com/images/f6d62c5d-1e1d-4de6-92ee-8dc8c80b1c7b/blob" alt="CompTIA A+"></div>
           </div>
@@ -444,7 +473,7 @@
     </section>
 
     <section id="projects">
-      <div class="section-label">05 · Projects</div>
+      <div class="section-label">06 · Projects</div>
       <h2 class="section-title">Built &<br><em>documented.</em></h2>
       <div class="projects-grid">
         <div class="project-card">
@@ -461,7 +490,7 @@
     </section>
 
     <section id="contact">
-      <div class="section-label">06 · Contact</div>
+      <div class="section-label">07 · Contact</div>
       <h2 class="section-title">Let's talk<br><em>opportunities.</em></h2>
       <div class="contact-grid">
         <div>
