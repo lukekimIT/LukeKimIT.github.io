@@ -152,7 +152,9 @@
     main { max-width: 960px; margin: 0 auto; padding: 0 36px; }
     .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 72px; }
     .hero-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.15s; display: flex; align-items: center; gap: 10px; }
-    .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--accent); }
+    .hero-eyebrow::before { display: none; }
+    .available-dot { width: 8px; height: 8px; border-radius: 50%; background: #39ff6a; flex-shrink: 0; box-shadow: 0 0 6px 2px rgba(57,255,106,0.6), 0 0 12px 4px rgba(57,255,106,0.25); animation: pulse-dot 2s ease-in-out infinite; }
+    @keyframes pulse-dot { 0%, 100% { box-shadow: 0 0 6px 2px rgba(57,255,106,0.6), 0 0 12px 4px rgba(57,255,106,0.25); } 50% { box-shadow: 0 0 10px 4px rgba(57,255,106,0.8), 0 0 20px 8px rgba(57,255,106,0.3); } }
     .hero h1 { font-family: var(--heading); font-size: clamp(56px, 9vw, 100px); font-weight: 300; line-height: 0.92; color: var(--text); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.3s; letter-spacing: -0.02em; }
     .hero h1 em { font-style: italic; color: var(--accent); }
     .hero-divider { width: 48px; height: 1px; background: var(--border-dark); margin-bottom: 20px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.42s; }
@@ -243,6 +245,7 @@
         <li><a href="#prodev">Dev</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#certs">Certifications</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -271,10 +274,10 @@
 
   <main>
     <section class="hero" id="top">
-      <div class="hero-eyebrow">Open to new opportunities</div>
+      <div class="hero-eyebrow"><span class="available-dot"></span>Available for hire</div>
       <h1>Luke<br><em>Kim</em></h1>
       <div class="hero-divider"></div>
-      <p class="hero-sub">IT professional with 4+ years of enterprise experience across security operations, systems administration, infrastructure, and endpoint management — built in real environments with real accountability.</p>
+      <p class="hero-sub">IT professional with 5+ years of enterprise experience across security operations, systems administration, infrastructure, and endpoint management — built in real environments with real accountability.</p>
       <div class="hero-certs">
         <span class="cert-badge">Security+</span>
         <span class="cert-badge">Network+</span>
@@ -298,9 +301,10 @@
           <p>My background spans enterprise security operations, vulnerability management, SIEM analysis, endpoint hardening, identity governance, and cross-functional IT support — developed across environments where accuracy and accountability matter.</p>
           <p>I bring the same rigor to every role I step into, whether that's securing infrastructure, administering systems, or building the documentation that keeps teams aligned and auditors satisfied.</p>
           <p>Currently completing my <strong>B.S. in Information Technology at WGU</strong> (expected 2026) and pursuing CySA+, SC-200, and AZ-500.</p>
+          <p>Eligible for <strong>U.S. Security Clearance</strong> — DoD 8570 IAT Level II compliant via CompTIA Security+.</p>
         </div>
         <div class="about-stats">
-          <div class="stat-box"><div class="stat-number">4+</div><div class="stat-label">Years Enterprise IT Experience</div></div>
+          <div class="stat-box"><div class="stat-number">5+</div><div class="stat-label">Years Enterprise IT Experience</div></div>
           <div class="stat-box"><div class="stat-number">400+</div><div class="stat-label">User Environment Secured</div></div>
           <div class="stat-box"><div class="stat-number">20+</div><div class="stat-label">SOPs & Playbooks Authored</div></div>
           <div class="stat-box"><div class="stat-number">30%</div><div class="stat-label">Reduction in Credential Compromise</div></div>
@@ -319,7 +323,15 @@
         </div>
         <div>
           <div class="exp-title">Systems Administrator</div>
-          <p class="exp-desc">Enterprise systems administration with a security-first approach across infrastructure, endpoints, and identity management.</p>
+          <p class="exp-desc">Supporting fast-paced IT operations across infrastructure, endpoints, and security — reporting to the IT Manager in a Tysons, VA on-site environment.</p>
+          <ul class="exp-bullets">
+            <li>Provide technical support and troubleshooting for <strong>hardware, software, and network issues</strong> — ensuring business operations remain uninterrupted.</li>
+            <li>Manage <strong>employee onboarding and offboarding</strong> — provisioning and deprovisioning accounts, equipment, and access in a timely and documented manner.</li>
+            <li>Oversee <strong>IT asset inventory</strong> — procuring, tracking, and managing hardware and software across the organization.</li>
+            <li>Collaborate with IT staff to conduct <strong>regular security audits</strong> — identifying vulnerabilities and ensuring compliance with security policies.</li>
+            <li>Develop and maintain <strong>IT documentation</strong> — capturing configurations, procedures, and system changes for operational continuity.</li>
+            <li>Support deployment of <strong>new applications and technologies</strong> — participating in rollout planning, testing, and implementation.</li>
+          </ul>
         </div>
       </div>
       <div class="exp-item">
@@ -329,10 +341,11 @@
           <div class="exp-location">Washington, DC</div>
         </div>
         <div>
-          <div class="exp-title">IT Service Desk II</div>
+          <div class="exp-title">IT Service Desk Technician II</div>
           <p class="exp-desc">Served as the primary information security resource for a 400+ user enterprise — full security analyst scope alongside IT operations responsibilities.</p>
           <ul class="exp-bullets">
             <li>Executed <strong>vulnerability management cycles</strong> against Windows Server assets — CVE analysis, risk prioritization, patch coordination, and NIST SP 800-53-aligned documentation.</li>
+            <li>Served as the <strong>escalation point for complex and unresolved tickets</strong> — triaging issues beyond Tier I scope, coordinating resolution with infrastructure teams, and ensuring SLA adherence.</li>
             <li>Led <strong>Windows 11 enterprise upgrade</strong> across endpoint fleet — coordinating rollout planning, compatibility assessment, and deployment with minimal operational disruption.</li>
             <li>Led <strong>org-wide MFA rollout</strong> across 400+ accounts, driving a 30–40% reduction in credential compromise events.</li>
             <li>Authored <strong>20+ security SOPs and incident response playbooks</strong> — audit-ready and consistently followed across teams.</li>
@@ -347,7 +360,7 @@
           <div class="exp-location">Washington, DC</div>
         </div>
         <div>
-          <div class="exp-title">IT Service Desk I</div>
+          <div class="exp-title">IT Service Desk Technician I</div>
           <ul class="exp-bullets">
             <li>Investigated security violations and endpoint alerts — documenting findings, coordinating resolution, and tracking items through to closure.</li>
             <li>Designed and deployed <strong>RBAC-based onboarding and offboarding workflows</strong> — reducing provisioning time by ~25% with fully auditable account lifecycle records.</li>
@@ -390,6 +403,7 @@
           <p class="exp-desc">Participated in live security operations within a production SOC environment.</p>
           <ul class="exp-bullets">
             <li>Reviewed <strong>SIEM alerts in Splunk and Rapid7 InsightIDR</strong> — investigating security exceptions, escalating incidents outside runbook guidance, and documenting all actions and outcomes.</li>
+            <li>Built and configured a <strong>sandbox environment</strong> for the security operations team — enabling safe testing of detection rules, attack simulations, and incident response workflows without impacting production systems.</li>
             <li>Participated in live security operations — coordinating incident escalation and managing the full remediation ticket lifecycle in a production SOC environment.</li>
             <li>Monitored honeypots and analyzed attack logs to identify adversarial TTPs — contributing root-cause findings and detection improvement recommendations to the security operations team.</li>
           </ul>
@@ -422,6 +436,7 @@
         <div class="skill-card"><div class="skill-card-title">Networking & Infrastructure</div><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS / DHCP</span><span class="skill-tag">VPN</span><span class="skill-tag">Snort IDS/IPS</span><span class="skill-tag">pfSense</span><span class="skill-tag">Network Segmentation</span></div></div>
         <div class="skill-card"><div class="skill-card-title">Cloud & Platforms</div><div class="skill-tags"><span class="skill-tag">Microsoft Azure</span><span class="skill-tag">Microsoft 365</span><span class="skill-tag">AWS Foundational</span><span class="skill-tag">SharePoint</span><span class="skill-tag">ServiceNow</span><span class="skill-tag">ManageEngine</span><span class="skill-tag">Salesforce</span><span class="skill-tag">ZOHO CRM</span><span class="skill-tag">Zendesk</span><span class="skill-tag">TeamViewer</span></div></div>
         <div class="skill-card"><div class="skill-card-title">Frameworks & Standards</div><div class="skill-tags"><span class="skill-tag">MITRE ATT&CK</span><span class="skill-tag">CIS Controls</span><span class="skill-tag">ITIL v4</span><span class="skill-tag">Zero Trust</span><span class="skill-tag">DoD 8570</span><span class="skill-tag">HIPAA</span></div></div>
+        <div class="skill-card"><div class="skill-card-title">Operating Systems</div><div class="skill-tags"><span class="skill-tag">Windows 8 / 10 / 11</span><span class="skill-tag">Windows Server</span><span class="skill-tag">Ubuntu</span><span class="skill-tag">Ubuntu Server</span><span class="skill-tag">Pop!_OS</span><span class="skill-tag">Fedora</span><span class="skill-tag">Debian</span><span class="skill-tag">macOS</span></div></div>
       </div>
     </section>
 
@@ -472,8 +487,23 @@
       </div>
     </section>
 
+    <section id="education">
+      <div class="section-label">06 · Education</div>
+      <h2 class="section-title">Academic<br><em>foundation.</em></h2>
+      <div class="exp-item" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+        <div class="exp-meta">
+          <div class="exp-company">WGU</div>
+          <div class="exp-date">Expected 2026</div>
+        </div>
+        <div>
+          <div class="exp-title">B.S. Information Technology</div>
+          <p class="exp-desc">Western Governors University — actively pursuing degree alongside full-time IT work.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="projects">
-      <div class="section-label">06 · Projects</div>
+      <div class="section-label">07 · Projects</div>
       <h2 class="section-title">Built &<br><em>documented.</em></h2>
       <div class="projects-grid">
         <div class="project-card">
@@ -490,7 +520,7 @@
     </section>
 
     <section id="contact">
-      <div class="section-label">07 · Contact</div>
+      <div class="section-label">08 · Contact</div>
       <h2 class="section-title">Let's talk<br><em>opportunities.</em></h2>
       <div class="contact-grid">
         <div>
