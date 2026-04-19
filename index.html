@@ -164,7 +164,9 @@
     .theme-switch__checkbox:checked + .theme-switch__container .theme-switch__stars-container { top: 50%; transform: translateY(-50%); }
 
     main { max-width: 960px; margin: 0 auto; padding: 0 36px; }
-    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 72px; }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 72px; position: relative; }
+    #particles-js { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+    .hero > *:not(#particles-js) { position: relative; z-index: 1; }
     .hero-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.15s; display: flex; align-items: center; gap: 10px; }
     .hero-eyebrow::before { display: none; }
     .available-dot { width: 8px; height: 8px; border-radius: 50%; background: #39ff6a; flex-shrink: 0; box-shadow: 0 0 6px 2px rgba(57,255,106,0.6), 0 0 12px 4px rgba(57,255,106,0.25); animation: pulse-dot 2s ease-in-out infinite; }
@@ -302,6 +304,7 @@
 
   <main>
     <section class="hero" id="top">
+      <div id="particles-js"></div>
       <div class="hero-eyebrow"><span class="available-dot"></span>Available for hire</div>
       <h1>Luke<br><em>Kim</em></h1>
       <div class="hero-divider"></div>
@@ -670,6 +673,49 @@
       const theme = checkbox.checked ? 'dark' : 'light';
       html.setAttribute('data-theme', theme);
       localStorage.setItem('theme', theme);
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Init particles after DOM ready
+    window.addEventListener('load', () => {
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 48, density: { enable: true, value_area: 800 } },
+          color: { value: '#007acc' },
+          shape: { type: 'circle' },
+          opacity: { value: 0.18, random: true },
+          size: { value: 2.5, random: true },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: '#007acc',
+            opacity: 0.1,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 0.6,
+            direction: 'none',
+            random: true,
+            straight: false,
+            out_mode: 'out',
+            bounce: false
+          }
+        },
+        interactivity: {
+          detect_on: 'canvas',
+          events: {
+            onhover: { enable: true, mode: 'grab' },
+            onclick: { enable: false },
+            resize: true
+          },
+          modes: {
+            grab: { distance: 140, line_linked: { opacity: 0.25 } }
+          }
+        },
+        retina_detect: true
+      });
     });
   </script>
 </body>
