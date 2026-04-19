@@ -201,7 +201,9 @@
     .exp-title { font-family: var(--heading); font-size: 24px; font-weight: 400; color: var(--text); margin-bottom: 10px; }
     .exp-desc { color: var(--muted); font-size: 14px; margin-bottom: 16px; line-height: 1.7; }
     .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .exp-bullets li { font-size: 13.5px; color: var(--muted); padding-left: 18px; position: relative; line-height: 1.65; }
+    .exp-bullets li { font-size: 13.5px; color: var(--muted); padding-left: 18px; position: relative; line-height: 1.65; border-radius: 4px; padding-top: 4px; padding-bottom: 4px; padding-right: 8px; transition: background 0.2s ease, color 0.2s ease; }
+    .exp-bullets li:hover { background: rgba(0,122,204,0.06); color: var(--text); }
+    .exp-bullets li:hover::before { color: var(--accent); }
     .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-size: 11px; }
     .exp-bullets li strong { color: var(--text); font-weight: 500; }
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2px; }
@@ -240,6 +242,8 @@
     .contact-link-label { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 3px; }
     .contact-link { font-family: var(--mono); font-size: 12px; color: var(--text); text-decoration: none; transition: color 0.2s; }
     .contact-link:hover { color: var(--accent); }
+    #copy-email { cursor: pointer; }
+    #copy-email.copied { color: #39ff6a; }
     footer { text-align: center; padding: 32px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -551,9 +555,9 @@
         </div>
         <div class="contact-links reveal reveal-delay-2">
           <div><div class="contact-link-label">Email</div>
-            <a href="mailto:yoonkeem@gmail.com" class="contact-link contact-link-row">
+            <a href="mailto:yoonkeem@gmail.com" class="contact-link contact-link-row" id="copy-email" title="Click to copy">
               <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></span>
-              yoonkeem@gmail.com
+              <span id="email-text">yoonkeem@gmail.com</span>
             </a>
           </div>
           <div><div class="contact-link-label">LinkedIn</div>
@@ -582,6 +586,21 @@
   <footer>Luke Kim · Northern Virginia · Built with HTML & CSS · Hosted on GitHub Pages</footer>
 
   <script>
+    // Copy email interaction
+    const copyEmail = document.getElementById('copy-email');
+    const emailText = document.getElementById('email-text');
+    copyEmail.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigator.clipboard.writeText('yoonkeem@gmail.com').then(() => {
+        emailText.textContent = '✓ Copied!';
+        copyEmail.classList.add('copied');
+        setTimeout(() => {
+          emailText.textContent = 'yoonkeem@gmail.com';
+          copyEmail.classList.remove('copied');
+        }, 2000);
+      });
+    });
+
     // Scroll progress bar
     const progressBar = document.getElementById('progress-bar');
     window.addEventListener('scroll', () => {
