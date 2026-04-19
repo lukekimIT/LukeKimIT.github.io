@@ -228,6 +228,13 @@
     .contact-link:hover { color: var(--accent); }
     footer { text-align: center; padding: 32px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
     @media (max-width: 768px) {
       nav { padding: 0 20px; } .nav-links { display: none; } main { padding: 0 20px; }
       .about-grid, .contact-grid, .projects-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -293,10 +300,10 @@
     </section>
 
     <section id="about">
-      <div class="section-label">01 · About</div>
-      <h2 class="section-title">Security-minded.<br><em>Systems-fluent.</em></h2>
+      <div class="section-label reveal">01 · About</div>
+      <h2 class="section-title reveal">Security-minded.<br><em>Systems-fluent.</em></h2>
       <div class="about-grid">
-        <div class="about-text">
+        <div class="about-text reveal">
           <p>I'm an IT professional based in <strong>Northern Virginia</strong>, currently working as a <strong>Systems Administrator at CATHEXIS</strong> in Tysons, VA.</p>
           <p>My background spans enterprise security operations, vulnerability management, SIEM analysis, endpoint hardening, identity governance, and cross-functional IT support — developed across environments where accuracy and accountability matter.</p>
           <p>I bring the same rigor to every role I step into, whether that's securing infrastructure, administering systems, or building the documentation that keeps teams aligned and auditors satisfied.</p>
@@ -304,18 +311,18 @@
           <p>Eligible for <strong>U.S. Security Clearance</strong> — DoD 8570 IAT Level II compliant via CompTIA Security+.</p>
         </div>
         <div class="about-stats">
-          <div class="stat-box"><div class="stat-number">5+</div><div class="stat-label">Years Enterprise IT Experience</div></div>
-          <div class="stat-box"><div class="stat-number">400+</div><div class="stat-label">User Environment Secured</div></div>
-          <div class="stat-box"><div class="stat-number">20+</div><div class="stat-label">SOPs & Playbooks Authored</div></div>
-          <div class="stat-box"><div class="stat-number">30%</div><div class="stat-label">Reduction in Credential Compromise</div></div>
+          <div class="stat-box reveal reveal-delay-2"><div class="stat-number">5+</div><div class="stat-label">Years Enterprise IT Experience</div></div>
+          <div class="stat-box reveal reveal-delay-3"><div class="stat-number">400+</div><div class="stat-label">User Environment Secured</div></div>
+          <div class="stat-box reveal reveal-delay-1"><div class="stat-number">20+</div><div class="stat-label">SOPs & Playbooks Authored</div></div>
+          <div class="stat-box reveal reveal-delay-2"><div class="stat-number">30%</div><div class="stat-label">Reduction in Credential Compromise</div></div>
         </div>
       </div>
     </section>
 
     <section id="experience">
-      <div class="section-label">02 · Experience</div>
-      <h2 class="section-title">Where I've<br><em>done the work.</em></h2>
-      <div class="exp-item">
+      <div class="section-label reveal">02 · Experience</div>
+      <h2 class="section-title reveal">Where I've<br><em>done the work.</em></h2>
+      <div class="exp-item reveal reveal-delay-2">
         <div class="exp-meta">
           <div class="exp-company">CATHEXIS</div>
           <div class="exp-date">Current</div>
@@ -334,7 +341,7 @@
           </ul>
         </div>
       </div>
-      <div class="exp-item">
+      <div class="exp-item reveal reveal-delay-3">
         <div class="exp-meta">
           <div class="exp-company">Museum of the Bible</div>
           <div class="exp-date">Aug 2023 – Apr 2026</div>
@@ -353,7 +360,7 @@
           </ul>
         </div>
       </div>
-      <div class="exp-item">
+      <div class="exp-item reveal reveal-delay-1">
         <div class="exp-meta">
           <div class="exp-company">Museum of the Bible</div>
           <div class="exp-date">Oct 2022 – Aug 2023</div>
@@ -369,7 +376,7 @@
           </ul>
         </div>
       </div>
-      <div class="exp-item">
+      <div class="exp-item reveal reveal-delay-2">
         <div class="exp-meta">
           <div class="exp-company">DentCore</div>
           <div class="exp-date">Oct 2018 – Jan 2020</div>
@@ -389,10 +396,10 @@
     </section>
 
     <section id="prodev">
-      <div class="section-label">03 · Professional Development</div>
-      <h2 class="section-title">Beyond the<br><em>day job.</em></h2>
+      <div class="section-label reveal">03 · Professional Development</div>
+      <h2 class="section-title reveal">Beyond the<br><em>day job.</em></h2>
 
-      <div class="exp-item">
+      <div class="exp-item reveal reveal-delay-3">
         <div class="exp-meta">
           <div class="exp-company">Hobby Lobby</div>
           <div class="exp-date">Feb 2024</div>
@@ -410,7 +417,7 @@
         </div>
       </div>
 
-      <div class="exp-item">
+      <div class="exp-item reveal reveal-delay-1">
         <div class="exp-meta">
           <div class="exp-company">Askeal AI</div>
           <div class="exp-date">Oct 2025 – Ongoing</div>
@@ -427,24 +434,24 @@
     </section>
 
     <section id="skills">
-      <div class="section-label">04 · Skills</div>
-      <h2 class="section-title">The technical<br><em>toolkit.</em></h2>
+      <div class="section-label reveal">04 · Skills</div>
+      <h2 class="section-title reveal">The technical<br><em>toolkit.</em></h2>
       <div class="skills-grid">
-        <div class="skill-card"><div class="skill-card-title">Security Operations</div><div class="skill-tags"><span class="skill-tag">Splunk</span><span class="skill-tag">Rapid7 InsightIDR</span><span class="skill-tag">Microsoft Sentinel</span><span class="skill-tag">Alert Triage</span><span class="skill-tag">Incident Response</span><span class="skill-tag">IOC Identification</span></div></div>
-        <div class="skill-card"><div class="skill-card-title">Vulnerability Management</div><div class="skill-tags"><span class="skill-tag">CVE Analysis</span><span class="skill-tag">Risk Prioritization</span><span class="skill-tag">Patch Coordination</span><span class="skill-tag">Windows Server Hardening</span><span class="skill-tag">NIST SP 800-53</span></div></div>
-        <div class="skill-card"><div class="skill-card-title">Endpoint & Identity</div><div class="skill-tags"><span class="skill-tag">Intune MDM</span><span class="skill-tag">Azure AD</span><span class="skill-tag">RBAC</span><span class="skill-tag">MFA Deployment</span><span class="skill-tag">Conditional Access</span><span class="skill-tag">Least Privilege</span></div></div>
-        <div class="skill-card"><div class="skill-card-title">Networking & Infrastructure</div><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS / DHCP</span><span class="skill-tag">VPN</span><span class="skill-tag">Snort IDS/IPS</span><span class="skill-tag">pfSense</span><span class="skill-tag">Network Segmentation</span></div></div>
-        <div class="skill-card"><div class="skill-card-title">Cloud & Platforms</div><div class="skill-tags"><span class="skill-tag">Microsoft Azure</span><span class="skill-tag">Microsoft 365</span><span class="skill-tag">AWS Foundational</span><span class="skill-tag">SharePoint</span><span class="skill-tag">ServiceNow</span><span class="skill-tag">ManageEngine</span><span class="skill-tag">Salesforce</span><span class="skill-tag">ZOHO CRM</span><span class="skill-tag">Zendesk</span><span class="skill-tag">TeamViewer</span></div></div>
-        <div class="skill-card"><div class="skill-card-title">Frameworks & Standards</div><div class="skill-tags"><span class="skill-tag">MITRE ATT&CK</span><span class="skill-tag">CIS Controls</span><span class="skill-tag">ITIL v4</span><span class="skill-tag">Zero Trust</span><span class="skill-tag">DoD 8570</span><span class="skill-tag">HIPAA</span></div></div>
-        <div class="skill-card"><div class="skill-card-title">Operating Systems</div><div class="skill-tags"><span class="skill-tag">Windows 8 / 10 / 11</span><span class="skill-tag">Windows Server</span><span class="skill-tag">Ubuntu</span><span class="skill-tag">Ubuntu Server</span><span class="skill-tag">Pop!_OS</span><span class="skill-tag">Fedora</span><span class="skill-tag">Debian</span><span class="skill-tag">macOS</span></div></div>
+        <div class="skill-card reveal reveal-delay-2"><div class="skill-card-title">Security Operations</div><div class="skill-tags"><span class="skill-tag">Splunk</span><span class="skill-tag">Rapid7 InsightIDR</span><span class="skill-tag">Microsoft Sentinel</span><span class="skill-tag">Alert Triage</span><span class="skill-tag">Incident Response</span><span class="skill-tag">IOC Identification</span></div></div>
+        <div class="skill-card reveal reveal-delay-3"><div class="skill-card-title">Vulnerability Management</div><div class="skill-tags"><span class="skill-tag">CVE Analysis</span><span class="skill-tag">Risk Prioritization</span><span class="skill-tag">Patch Coordination</span><span class="skill-tag">Windows Server Hardening</span><span class="skill-tag">NIST SP 800-53</span></div></div>
+        <div class="skill-card reveal reveal-delay-1"><div class="skill-card-title">Endpoint & Identity</div><div class="skill-tags"><span class="skill-tag">Intune MDM</span><span class="skill-tag">Azure AD</span><span class="skill-tag">RBAC</span><span class="skill-tag">MFA Deployment</span><span class="skill-tag">Conditional Access</span><span class="skill-tag">Least Privilege</span></div></div>
+        <div class="skill-card reveal reveal-delay-2"><div class="skill-card-title">Networking & Infrastructure</div><div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS / DHCP</span><span class="skill-tag">VPN</span><span class="skill-tag">Snort IDS/IPS</span><span class="skill-tag">pfSense</span><span class="skill-tag">Network Segmentation</span></div></div>
+        <div class="skill-card reveal reveal-delay-3"><div class="skill-card-title">Cloud & Platforms</div><div class="skill-tags"><span class="skill-tag">Microsoft Azure</span><span class="skill-tag">Microsoft 365</span><span class="skill-tag">AWS Foundational</span><span class="skill-tag">SharePoint</span><span class="skill-tag">ServiceNow</span><span class="skill-tag">ManageEngine</span><span class="skill-tag">Salesforce</span><span class="skill-tag">ZOHO CRM</span><span class="skill-tag">Zendesk</span><span class="skill-tag">TeamViewer</span></div></div>
+        <div class="skill-card reveal reveal-delay-1"><div class="skill-card-title">Frameworks & Standards</div><div class="skill-tags"><span class="skill-tag">MITRE ATT&CK</span><span class="skill-tag">CIS Controls</span><span class="skill-tag">ITIL v4</span><span class="skill-tag">Zero Trust</span><span class="skill-tag">DoD 8570</span><span class="skill-tag">HIPAA</span></div></div>
+        <div class="skill-card reveal reveal-delay-2"><div class="skill-card-title">Operating Systems</div><div class="skill-tags"><span class="skill-tag">Windows 8 / 10 / 11</span><span class="skill-tag">Windows Server</span><span class="skill-tag">Ubuntu</span><span class="skill-tag">Ubuntu Server</span><span class="skill-tag">Pop!_OS</span><span class="skill-tag">Fedora</span><span class="skill-tag">Debian</span><span class="skill-tag">macOS</span></div></div>
       </div>
     </section>
 
     <section id="certs">
-      <div class="section-label">05 · Certifications</div>
-      <h2 class="section-title">Earned<br><em>certifications.</em></h2>
+      <div class="section-label reveal">05 · Certifications</div>
+      <h2 class="section-title reveal">Earned<br><em>certifications.</em></h2>
       <div class="certs-grid">
-        <div class="cert-card">
+        <div class="cert-card reveal reveal-delay-2">
           <div class="cert-card-header">
             <div class="cert-card-text">
               <div class="cert-issuer">CompTIA</div>
@@ -454,7 +461,7 @@
             <div class="cert-icon"><img src="https://images.credly.com/images/80d8a06a-c384-42bf-ad36-db81bce5adce/blob" alt="CompTIA Security+"></div>
           </div>
         </div>
-        <div class="cert-card">
+        <div class="cert-card reveal reveal-delay-3">
           <div class="cert-card-header">
             <div class="cert-card-text">
               <div class="cert-issuer">CompTIA</div>
@@ -464,7 +471,7 @@
             <div class="cert-icon"><img src="https://images.credly.com/images/c70ba73e-3c8a-46fa-9d60-4a9af94ad662/blob" alt="CompTIA Network+"></div>
           </div>
         </div>
-        <div class="cert-card">
+        <div class="cert-card reveal reveal-delay-1">
           <div class="cert-card-header">
             <div class="cert-card-text">
               <div class="cert-issuer">CompTIA</div>
@@ -474,7 +481,7 @@
             <div class="cert-icon"><img src="https://images.credly.com/images/f6d62c5d-1e1d-4de6-92ee-8dc8c80b1c7b/blob" alt="CompTIA A+"></div>
           </div>
         </div>
-        <div class="cert-card">
+        <div class="cert-card reveal reveal-delay-2">
           <div class="cert-card-header">
             <div class="cert-card-text">
               <div class="cert-issuer">PeopleCert / AXELOS</div>
@@ -488,9 +495,9 @@
     </section>
 
     <section id="education">
-      <div class="section-label">06 · Education</div>
-      <h2 class="section-title">Academic<br><em>foundation.</em></h2>
-      <div class="exp-item" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+      <div class="section-label reveal">06 · Education</div>
+      <h2 class="section-title reveal">Academic<br><em>foundation.</em></h2>
+      <div class="exp-item reveal" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
         <div class="exp-meta">
           <div class="exp-company">WGU</div>
           <div class="exp-date">Expected 2026</div>
@@ -503,15 +510,15 @@
     </section>
 
     <section id="projects">
-      <div class="section-label">07 · Projects</div>
-      <h2 class="section-title">Built &<br><em>documented.</em></h2>
+      <div class="section-label reveal">07 · Projects</div>
+      <h2 class="section-title reveal">Built &<br><em>documented.</em></h2>
       <div class="projects-grid">
-        <div class="project-card">
+        <div class="project-card reveal">
           <div class="project-title">Home Security Operations & Vulnerability Lab</div>
           <p class="project-desc">Multi-node Proxmox VE homelab running Splunk SIEM — full incident documentation, vulnerability testing, attack simulations, and network segmentation with pfSense and Snort IDS/IPS. Active Directory and RBAC configured to mirror enterprise identity governance.</p>
           <div class="project-tags"><span class="project-tag">Splunk</span><span class="project-tag">Proxmox VE</span><span class="project-tag">pfSense</span><span class="project-tag">Snort</span><span class="project-tag">Active Directory</span></div>
         </div>
-        <div class="project-card">
+        <div class="project-card reveal">
           <div class="project-title">Resume Tailoring Tool</div>
           <p class="project-desc">Python-based automation tool that takes a base resume and a job description and outputs a tailored version with targeted language and metrics — built using Claude Code as part of a broader career development automation project.</p>
           <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Claude Code</span><span class="project-tag">Automation</span></div>
@@ -520,14 +527,14 @@
     </section>
 
     <section id="contact">
-      <div class="section-label">08 · Contact</div>
-      <h2 class="section-title">Let's talk<br><em>opportunities.</em></h2>
+      <div class="section-label reveal">08 · Contact</div>
+      <h2 class="section-title reveal">Let's talk<br><em>opportunities.</em></h2>
       <div class="contact-grid">
         <div>
           <p class="contact-text">I'm open to roles across IT security, systems administration, cloud infrastructure, and operations — anywhere my background in enterprise environments translates into immediate value. If that's your team, let's connect.</p>
           <a href="mailto:yoonkeem@gmail.com" class="btn-primary">Send an Email</a>
         </div>
-        <div class="contact-links">
+        <div class="contact-links reveal reveal-delay-2">
           <div><div class="contact-link-label">Email</div>
             <a href="mailto:yoonkeem@gmail.com" class="contact-link contact-link-row">
               <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></span>
@@ -560,6 +567,18 @@
   <footer>Luke Kim · Northern Virginia · Built with HTML & CSS · Hosted on GitHub Pages</footer>
 
   <script>
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
     const checkbox = document.getElementById('themeCheckbox');
     const html = document.documentElement;
     const saved = localStorage.getItem('theme') || 'light';
