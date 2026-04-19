@@ -172,7 +172,9 @@
     .hero h1 { font-family: var(--heading); font-size: clamp(56px, 9vw, 100px); font-weight: 300; line-height: 0.92; color: var(--text); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.3s; letter-spacing: -0.02em; }
     .hero h1 em { font-style: italic; color: var(--accent); }
     .hero-divider { width: 48px; height: 1px; background: var(--border-dark); margin-bottom: 20px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.42s; }
-    .hero-sub { font-size: 16px; color: var(--muted); max-width: 500px; margin-bottom: 32px; line-height: 1.75; opacity: 0; animation: fadeUp 0.6s ease forwards 0.52s; }
+    .hero-sub { font-size: 16px; color: var(--muted); max-width: 500px; margin-bottom: 32px; line-height: 1.75; opacity: 1; }
+    .hero-sub .cursor { display: inline-block; width: 2px; height: 1em; background: var(--accent); margin-left: 2px; vertical-align: text-bottom; animation: blink 0.8s step-end infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     .hero-certs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.64s; }
     .cert-badge { font-family: var(--mono); font-size: 11px; padding: 4px 11px; border: 1px solid var(--green-border); border-radius: 2px; color: var(--green); letter-spacing: 0.08em; background: var(--green-dim); }
     .hero-actions { display: flex; gap: 12px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.76s; }
@@ -303,7 +305,7 @@
       <div class="hero-eyebrow"><span class="available-dot"></span>Available for hire</div>
       <h1>Luke<br><em>Kim</em></h1>
       <div class="hero-divider"></div>
-      <p class="hero-sub">IT professional with 5+ years of enterprise experience across security operations, systems administration, infrastructure, and endpoint management — built in real environments with real accountability.</p>
+      <p class="hero-sub" id="hero-sub"></p>
       <div class="hero-certs">
         <span class="cert-badge">Security+</span>
         <span class="cert-badge">Network+</span>
@@ -586,6 +588,27 @@
   <footer>Luke Kim · Northern Virginia · Built with HTML & CSS · Hosted on GitHub Pages</footer>
 
   <script>
+    // Typing animation
+    const heroSub = document.getElementById('hero-sub');
+    const typingText = "IT professional with 5+ years of enterprise experience across security operations, systems administration, infrastructure, and endpoint management — built in real environments with real accountability.";
+    const cursor = document.createElement('span');
+    cursor.classList.add('cursor');
+    let charIndex = 0;
+
+    function type() {
+      if (charIndex < typingText.length) {
+        heroSub.textContent = typingText.slice(0, charIndex + 1);
+        heroSub.appendChild(cursor);
+        charIndex++;
+        setTimeout(type, 12);
+      } else {
+        heroSub.appendChild(cursor);
+        setTimeout(() => cursor.remove(), 3200);
+      }
+    }
+
+    setTimeout(type, 900);
+
     // Copy email interaction
     const copyEmail = document.getElementById('copy-email');
     const emailText = document.getElementById('email-text');
