@@ -57,6 +57,19 @@
       line-height: 1.6; overflow-x: hidden;
       transition: background 0.3s ease, color 0.3s ease;
     }
+
+    /* Scroll progress bar */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 0%;
+      height: 4px;
+      background: var(--accent);
+      z-index: 200;
+      transition: width 0.05s linear;
+      box-shadow: 0 0 10px rgba(0,122,204,0.8);
+    }
+
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
@@ -244,6 +257,7 @@
   </style>
 </head>
 <body>
+  <div id="progress-bar"></div>
   <nav>
     <div class="nav-left">
       <div class="nav-logo">Luke Kim</div>
@@ -568,6 +582,15 @@
   <footer>Luke Kim · Northern Virginia · Built with HTML & CSS · Hosted on GitHub Pages</footer>
 
   <script>
+    // Scroll progress bar
+    const progressBar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      progressBar.style.width = progress + '%';
+    });
+
     // Nav active link highlight
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
